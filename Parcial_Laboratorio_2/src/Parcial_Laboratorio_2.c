@@ -30,6 +30,8 @@ int main(void) {
 	setbuf(stdout,NULL);
 	int opcion;
 	int flagLoadText = 0;
+	int flagMap1 = 0;
+	int flagMap2 = 0;
 
 	LinkedList* listaPokemones = ll_newLinkedList();
 	LinkedList* listaPokemonesAuxiliar = ll_newLinkedList();
@@ -94,22 +96,42 @@ int main(void) {
 		case 5:
 			if(flagLoadText == 1)
 			{
-				listaPokemones = ll_map(listaPokemones, Pokemon_MapAtaque);
-				Hernandez_controller_ListPokemones(listaPokemones);
-				printf("Ataque mejorado!\n");
+				if(flagMap1==0)
+				{
+					flagMap1 = 1;
+					listaPokemones = ll_map(listaPokemones, Pokemon_MapAtaque);
+					Hernandez_controller_ListPokemones(listaPokemones);
+					printf("Ataque mejorado!\n");
+				}
+				else
+				{
+					printf("Ya se mapearon.\n");
+				}
 			}
 			else
 			{
-				printf("No se cargó ningún pokemon.\n");
+				printf("No se cargó ningun pokemon.\n");
 			}
 		break;
 
 		case 6:
 			if(flagLoadText == 1)
 			{
+				if(flagMap2==0)
+				{
+				flagMap2 = 1;
 				listaPokemones = ll_map(listaPokemones, Pokemon_MapAtaque2);
 				Hernandez_controller_ListPokemones(listaPokemones);
 				printf("Ataque mejorado!\n");
+				}
+				else
+				{
+					printf("Ya se mapearon.\n");
+				}
+			}
+			else
+			{
+				printf("No se cargó ningún pokemon.\n");
 			}
 		break;
 
