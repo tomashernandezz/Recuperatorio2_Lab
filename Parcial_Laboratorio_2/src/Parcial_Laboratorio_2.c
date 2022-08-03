@@ -57,6 +57,7 @@ int main(void) {
 		case 2:
 			if(flagLoadText == 1)
 			{
+				controller_ListPokemones(listaPokemones);
 				controller_removePokemon(listaPokemones);
 			}
 			else

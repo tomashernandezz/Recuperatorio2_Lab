@@ -37,25 +37,24 @@ int controller_removePokemon(LinkedList* listaPokemones)
 	if(listaPokemones != NULL)
 		{
 			tam = ll_len(listaPokemones);
-			printf("%d\n",tam);
 			id = PedirEntero("Ingrese el numero del pokemon que desea eliminar: ","Error.\nIngrese el id del pasajero que desea eliminar: ",1,tam);
 			index = Pokemon_findID(listaPokemones,id);
 
 			PasajeroAEliminar = (sPokemon*)ll_get(listaPokemones,index);
 
-			printf("¿Está seguro de eliminar este pasajero?\ns Si\nn No    ");
+			printf("¿Está seguro de eliminar este pokemon?\ns Si\nn No    ");
 			scanf("%s",&respuesta);
 
 			if(respuesta == 's')
 			{
 				Pokemon_delete(PasajeroAEliminar);
 				ll_remove(listaPokemones,index);
-				printf("Pasajero eliminado con éxito.\n");
+				printf("Pokemon eliminado con éxito.\n");
 				retorno = 1;
 			}
 			else
 			{
-				printf("Usted no ha eliminado al pasajero.\n");
+				printf("Usted no ha eliminado al Pokemon.\n");
 			}
 
 		}
