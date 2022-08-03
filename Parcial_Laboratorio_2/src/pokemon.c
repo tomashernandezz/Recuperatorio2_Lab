@@ -296,3 +296,61 @@ void Pokemon_MapAtaque(void* unPokemon)
 		Pokemon_setValorAtaque(unPokemon, valorAtaque);
 	}
 }
+
+void Pokemon_MapAtaque2(void* unPokemon)
+{
+	char tipo[50];
+	char tamanio[50];
+	int valorAtaque;
+	int MapAtaque;
+
+	Pokemon_getTipo(unPokemon, tipo);
+	Pokemon_getTamanio(unPokemon,tamanio);
+	Pokemon_getValorAtaque(unPokemon, &valorAtaque);
+
+	if((strcmp(tipo, "Bug") == 0) || (strcmp(tipo, "Fire") == 0) || (strcmp(tipo, "Grass") == 0))
+	{
+		if(strcmp(tamanio,"XL") == 0)
+		{
+			MapAtaque = valorAtaque*20/100;
+			valorAtaque = valorAtaque + MapAtaque;
+		}
+		else
+		{
+			if(strcmp(tamanio,"L") == 0)
+			{
+				MapAtaque = valorAtaque*10/100;
+				valorAtaque = valorAtaque + MapAtaque;
+			}
+			else
+			{
+				MapAtaque = valorAtaque*5/100;
+				valorAtaque = valorAtaque + MapAtaque;
+			}
+		}
+
+		Pokemon_setValorAtaque(unPokemon, valorAtaque);
+	}
+}
+
+int Pokemon_Cont(void* UnPokemon)
+{
+	char tipo[50];
+	char tamanio[50];
+	char atqCargado[50];
+	int valorAtaque;
+	int rtrn = 0;
+
+	Pokemon_getTipo(UnPokemon, tipo);
+	Pokemon_getTamanio(UnPokemon,tamanio);
+	Pokemon_getAtaqueCargado(UnPokemon,atqCargado);
+	Pokemon_getValorAtaque(UnPokemon, &valorAtaque);
+
+	if(((strcmp(tipo,"Fire") == 0)&& ((strcmp(tamanio,"XL") == 0) && (strcmp(atqCargado,"Lanzallamas")==0)) && (valorAtaque>80))
+	||((strcmp(tipo,"Water") == 0) && ((strcmp(tamanio,"L") == 0) && (strcmp(atqCargado,"Hidrobomba")==0)) && (valorAtaque>80)))
+	{
+		rtrn = 1;
+	}
+
+	return rtrn;
+}

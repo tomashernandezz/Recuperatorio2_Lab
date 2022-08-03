@@ -636,3 +636,30 @@ LinkedList* ll_map(LinkedList* this, void (*pFunc)(void*))
 
 	return list;
 }
+
+
+/// @brief Cuenta cuales pokemones cumplen con la función que se le pasa como parámetro
+///
+/// @param this Lista que se va a utilizar
+/// @param pFunc Puntero a la función criterio
+/// @return Retorna según la cantidad de veces que se encuentre el criterio en la lista
+int ll_count(LinkedList* this, int(*pFunc)(void*))
+{
+	int contador = 0;
+	int tam;
+
+	tam = ll_len(this);
+
+	if(this!=NULL && pFunc!=NULL)
+	{
+		for(int i=0;i<tam;i++)
+		{
+			if(pFunc(ll_get(this,i))==1)
+			{
+				contador++;
+			}
+		}
+	}
+
+	return contador;
+}

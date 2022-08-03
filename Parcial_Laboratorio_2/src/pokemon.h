@@ -170,4 +170,15 @@ int Pokemon_FiltroWaterColor(void* unPokemon);
 ///
 /// @param unPokemon Puntero a función de los pokemones que se van a modificar
 void Pokemon_MapAtaque(void* unPokemon);
+
+/// @brief
+///
+/// @param unPokemon
+void Pokemon_MapAtaque2(void* unPokemon);
+
+/// @brief
+///
+/// @param UnPokemon
+/// @return
+int Pokemon_Cont(void* UnPokemon);
 #endif

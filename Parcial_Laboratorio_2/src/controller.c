@@ -4,7 +4,7 @@
 #include "LinkedList.h"
 #include "input.h"
 
-int controller_loadFromText(char* path , LinkedList* listaPokemones)
+int Hernandez_controller_loadFromText(char* path , LinkedList* listaPokemones)
 {
 	FILE* pArchivo;
 	int validacion = 0;
@@ -25,7 +25,7 @@ int controller_loadFromText(char* path , LinkedList* listaPokemones)
     return validacion;
 }
 
-int controller_removePokemon(LinkedList* listaPokemones)
+int Hernandez_controller_removePokemon(LinkedList* listaPokemones)
 {
 	int tam;
 	int id;
@@ -61,7 +61,7 @@ int controller_removePokemon(LinkedList* listaPokemones)
 	return retorno;
 }
 
-int controller_ListPokemones(LinkedList* listaPokemones)
+int Hernandez_controller_ListPokemones(LinkedList* listaPokemones)
 {
 	int auxNumero;
 	char auxNombre[51];
@@ -110,4 +110,20 @@ int controller_ListPokemones(LinkedList* listaPokemones)
 	}
 
 	return retorno;
+}
+
+void Hernandez_controller_Count(LinkedList* listaPokemones)
+{
+	int contadorPokemones = 0;
+
+	contadorPokemones = ll_count(listaPokemones,Pokemon_Cont);
+	printf("Hay %d pokemones\n",contadorPokemones);
+	if(contadorPokemones > 2)
+	{
+		printf("La batalla ha sido ganada.\n");
+	}
+	else
+	{
+		printf("La batalla ha sido perdida.\n");
+	}
 }

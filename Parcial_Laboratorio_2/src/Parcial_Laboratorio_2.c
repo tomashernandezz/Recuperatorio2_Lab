@@ -41,14 +41,16 @@ int main(void) {
 				"3- Imprimir pokemones.\n"
 				"4- Filtrar de tipo Agua variocolor.\n"
 				"5- Mapear ataque cargado.\n"
-				"6- Salir\n"
-				"================================================\n","Error\n Vuelva a ingresar alguna de las opciones anteriores.",1,6);
+				"6- Mapear Bug, Fire y Grass.\n"
+				"7- Batalla pokemon.\n"
+				"8- Salir\n"
+				"================================================\n","Error\n Vuelva a ingresar alguna de las opciones anteriores.",1,8);
 		switch(opcion)
 		{
 		case 1:
 			if(ll_isEmpty(listaPokemones) && flagLoadText == 0)
 			{
-					controller_loadFromText("C:\\Users\\PC\\Downloads\\Data_Pokemones.csv",listaPokemones);
+					Hernandez_controller_loadFromText("C:\\Users\\PC\\Downloads\\Data_Pokemones.csv",listaPokemones);
 					flagLoadText = 1;
 					printf("Datos cargados con éxito!\n");
 			}
@@ -57,8 +59,8 @@ int main(void) {
 		case 2:
 			if(flagLoadText == 1)
 			{
-				controller_ListPokemones(listaPokemones);
-				controller_removePokemon(listaPokemones);
+				Hernandez_controller_ListPokemones(listaPokemones);
+				Hernandez_controller_removePokemon(listaPokemones);
 			}
 			else
 			{
@@ -69,7 +71,7 @@ int main(void) {
 		case 3:
 			if(flagLoadText == 1)
 			{
-				controller_ListPokemones(listaPokemones);
+				Hernandez_controller_ListPokemones(listaPokemones);
 			}
 			else
 			{
@@ -81,7 +83,7 @@ int main(void) {
 			if(flagLoadText == 1)
 			{
 				listaPokemonesAuxiliar = ll_filter(listaPokemones,Pokemon_FiltroWaterColor);
-				controller_ListPokemones(listaPokemonesAuxiliar);
+				Hernandez_controller_ListPokemones(listaPokemonesAuxiliar);
 			}
 			else
 			{
@@ -93,14 +95,31 @@ int main(void) {
 			if(flagLoadText == 1)
 			{
 				listaPokemones = ll_map(listaPokemones, Pokemon_MapAtaque);
-				controller_ListPokemones(listaPokemones);
+				Hernandez_controller_ListPokemones(listaPokemones);
+				printf("Ataque mejorado!\n");
 			}
 			else
 			{
 				printf("No se cargó ningún pokemon.\n");
 			}
 		break;
+
+		case 6:
+			if(flagLoadText == 1)
+			{
+				listaPokemones = ll_map(listaPokemones, Pokemon_MapAtaque2);
+				Hernandez_controller_ListPokemones(listaPokemones);
+				printf("Ataque mejorado!\n");
+			}
+		break;
+
+		case 7:
+			if(flagLoadText == 1)
+			{
+				Hernandez_controller_Count(listaPokemones);
+			}
+		break;
 		}
 
-	}while(opcion!=6);
+	}while(opcion!=8);
 }
