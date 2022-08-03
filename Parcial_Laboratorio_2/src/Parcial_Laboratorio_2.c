@@ -140,6 +140,10 @@ int main(void) {
 			{
 				Hernandez_controller_Count(listaPokemones);
 			}
+			else
+			{
+				printf("No se cargó ningún pokemon.\n");
+			}
 		break;
 		}
 
