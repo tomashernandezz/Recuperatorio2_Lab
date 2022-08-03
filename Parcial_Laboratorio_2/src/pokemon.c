@@ -339,6 +339,7 @@ int Pokemon_Cont(void* UnPokemon)
 	char tamanio[50];
 	char atqCargado[50];
 	int valorAtaque;
+	char nombrePokemon[50];
 	int rtrn = 0;
 
 	Pokemon_getTipo(UnPokemon, tipo);
@@ -349,6 +350,8 @@ int Pokemon_Cont(void* UnPokemon)
 	if(((strcmp(tipo,"Fire") == 0)&& ((strcmp(tamanio,"XL") == 0) && (strcmp(atqCargado,"Lanzallamas")==0)) && (valorAtaque>80))
 	||((strcmp(tipo,"Water") == 0) && ((strcmp(tamanio,"L") == 0) && (strcmp(atqCargado,"Hidrobomba")==0)) && (valorAtaque>80)))
 	{
+		Pokemon_getNombre(UnPokemon,nombrePokemon);
+		printf("%s\n",nombrePokemon);
 		rtrn = 1;
 	}
 
