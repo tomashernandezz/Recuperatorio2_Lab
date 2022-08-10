@@ -122,7 +122,7 @@ void pokemonLoadTextId(int numero)
 {
 	FILE* pArchivo;
 
-	pArchivo = fopen("Data_Pokemones.csv","w");
+	pArchivo = fopen("Data_PokemonesID.csv","w");
 
 	if(pArchivo!=NULL)
 	{
@@ -135,10 +135,10 @@ void pokemonLoadTextId(int numero)
 void Pokemon_delete(sPokemon* this)
 {
 	if(this!=NULL)
-		{
-			free(this);
-			this=NULL;
-		}
+	{
+		free(this);
+		this=NULL;
+	}
 }
 
 int Pokemon_findID(LinkedList* listaPokemones, int id)

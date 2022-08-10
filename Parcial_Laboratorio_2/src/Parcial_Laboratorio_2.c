@@ -46,13 +46,13 @@ int main(void) {
 				"6- Mapear Bug, Fire y Grass.\n"
 				"7- Batalla pokemon.\n"
 				"8- Salir\n"
-				"================================================\n","Error\n Vuelva a ingresar alguna de las opciones anteriores.",1,8);
+				"================================================\n","Error.\nVuelva a ingresar alguna de las opciones anteriores.",1,8);
 		switch(opcion)
 		{
 		case 1:
 			if(ll_isEmpty(listaPokemones) && flagLoadText == 0)
 			{
-					Hernandez_controller_loadFromText("C:\\Users\\PC\\Downloads\\Data_Pokemones.csv",listaPokemones);
+					Hernandez_controller_loadFromText("src/Data_Pokemones.csv",listaPokemones);
 					flagLoadText = 1;
 					printf("Datos cargados con éxito!\n");
 			}
