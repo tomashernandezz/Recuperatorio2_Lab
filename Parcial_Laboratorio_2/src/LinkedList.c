@@ -627,8 +627,8 @@ LinkedList* ll_map(LinkedList* this, void (*pFunc)(void*))
 
 	if(this != NULL && pFunc != NULL){
 
-		for(int i=0; i<size; i++){
-
+		for(int i=0; i<size; i++)
+		{
 			pFunc(ll_get(this, i));
 		}
 		list = this;

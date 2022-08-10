@@ -52,8 +52,17 @@ int main(void) {
 		case 1:
 			if(ll_isEmpty(listaPokemones) && flagLoadText == 0)
 			{
-					Hernandez_controller_loadFromText("Data_Pokemones.csv",listaPokemones);
-					flagLoadText = 1;
+					if(Hernandez_controller_loadFromText("Data_Pokemones.csv",listaPokemones)==1)
+					{
+						flagLoadText = 1;
+					}
+			}
+			else
+			{
+				if(flagLoadText == 1)
+				{
+					printf("Ya se cargó el archivo anteriormente.\n");
+				}
 			}
 		break;
 
