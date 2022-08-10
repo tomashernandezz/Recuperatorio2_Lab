@@ -16,6 +16,7 @@ int Hernandez_controller_loadFromText(char* path , LinkedList* listaPokemones)
 		if(pArchivo != NULL)
 		{
 			parser_PokemonFromText(pArchivo,listaPokemones);
+			printf("Datos cargados con éxito!\n");
 			validacion = 1;
 		}
 		else

@@ -52,9 +52,8 @@ int main(void) {
 		case 1:
 			if(ll_isEmpty(listaPokemones) && flagLoadText == 0)
 			{
-					Hernandez_controller_loadFromText("src/Data_Pokemones.csv",listaPokemones);
+					Hernandez_controller_loadFromText("Data_Pokemones.csv",listaPokemones);
 					flagLoadText = 1;
-					printf("Datos cargados con éxito!\n");
 			}
 		break;
 
